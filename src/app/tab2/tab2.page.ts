@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,30 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(public alertController: AlertController) {}
+
+  async exibirAlertaNota() {
+    const alert = await this.alertController.create({
+      header: 'Atenção!',
+      message: 'Realmente deseja dar essa nota a esse filme?',
+      buttons: [
+        {
+          text: 'Não',
+          role: 'cancel',
+          handler: (blah) => {
+            console.log('Você cancelou essa nota!');
+          }
+        }, {
+          text: 'Sim',
+          handler: () => {
+            console.log('Você deu uma nota a esse filme!');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 
 }
