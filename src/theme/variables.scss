@@ -74,4 +74,22 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** retarded **/
+  --ion-color-retarded: #fa8500;
+  --ion-color-retarded-rgb: 250,133,0;
+  --ion-color-retarded-contrast: #000000;
+  --ion-color-retarded-contrast-rgb: 0,0,0;
+  --ion-color-retarded-shade: #dc7500;
+  --ion-color-retarded-tint: #fb911a;
+
+}
+
+.ion-color-retarded {
+  --ion-color-base: var(--ion-color-retarded);
+  --ion-color-base-rgb: var(--ion-color-retarded-rgb);
+  --ion-color-contrast: var(--ion-color-retarded-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-retarded-contrast-rgb);
+  --ion-color-shade: var(--ion-color-retarded-shade);
+  --ion-color-tint: var(--ion-color-retarded-tint);
 }
