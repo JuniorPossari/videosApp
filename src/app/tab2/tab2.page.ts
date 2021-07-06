@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -8,29 +9,36 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab2Page {
 
-  constructor(public alertController: AlertController) {}
+  constructor(public alertController: AlertController, public toastController: ToastController) {}
 
-  async exibirAlertaNota() {
+  async exibirAlertaNota(nota) {
     const alert = await this.alertController.create({
       header: 'Atenção!',
-      message: 'Realmente deseja dar essa nota a esse filme?',
+      message: 'Realmente deseja dar nota ' + nota + ' a esse filme?',
       buttons: [
         {
           text: 'Não',
           role: 'cancel',
-          handler: (blah) => {
-            console.log('Você cancelou essa nota!');
-          }
         }, {
           text: 'Sim',
           handler: () => {
-            console.log('Você deu uma nota a esse filme!');
+            this.apresentarToast(nota);
           }
         }
       ]
     });
 
     await alert.present();
+  }
+
+  async apresentarToast(nota) {
+    const toast = await this.toastController.create({
+      message: 'Você deu nota ' + nota + ' para esse filme!',
+      duration: 2000,
+      position: 'top',
+      color: 'success'
+    });
+    toast.present();
   }
 
 
