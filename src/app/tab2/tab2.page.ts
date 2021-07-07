@@ -1,3 +1,4 @@
+import { IFilme } from '../models/IFilme.model';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
@@ -8,6 +9,27 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
+  titulo = 'Filmes';
+
+  listaFilmes: IFilme[] = [
+    {
+      nome: 'Mortal Kombat (2021)',
+      lancamento: '15/04/2021',
+      duracao: '1h 50m',
+      nota: 3.5,
+      logo: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ijvC2w2yANsfgLT3LMu2zFr0fxh.jpg',
+      generos: ['Ação', 'Fantasia', 'Aventura']
+    },
+    {
+      nome: 'Cruella (2021)',
+      lancamento: '28/05/2021',
+      duracao: '2h 14m',
+      nota: 4.2,
+      logo: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ljPHd7WiPVKmuXi1hgQUpZQslbC.jpg',
+      generos: ['Comédia', 'Crime']
+    }
+  ];
 
   constructor(public alertController: AlertController, public toastController: ToastController) {}
 
