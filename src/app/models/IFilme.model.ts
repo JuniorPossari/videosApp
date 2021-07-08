@@ -5,4 +5,5 @@ export interface IFilme {
   nota: number;
   logo: string;
   generos: string[];
+  pagina?: string;
 }
