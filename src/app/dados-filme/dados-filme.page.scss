@@ -8,3 +8,17 @@ ion-badge{
   font-size: 0.8rem;
   margin-right: 3px;
 }
+
+ion-icon{
+  font-size: 100px;
+  color: #c7c7c7;
+}
+
+ion-chip{
+  padding-inline: 0;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  justify-content: center;
+  border-width: 3px;
+}
