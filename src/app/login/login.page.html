@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true" color="light">
+  <div class="principal">
+      <div class="img-center">
+        <img src="assets/noteflix.png">
+      </div>
+      <h1 class="ion-text-center">Acessar</h1>
+      <ion-item lines="full" color="light">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item lines="full" color="light">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="login()" color="primary">Entrar</ion-button>
+      <ion-button expand="full" color="tertiary">Cadastrar</ion-button>
+  </div>
+</ion-content>
